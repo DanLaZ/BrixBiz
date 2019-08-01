@@ -4,18 +4,16 @@
 ---
 
 ###Table of Contents
-Team Members
+#>_Team Members
+#>_The Mission
+#>_App Demo
+,
+---
+##Team Members
 (https://github.com/abigailettore "Abby Ettore")
 (https://github.com/anagabitec "Ana Gabriella Menezes")
 (https://github.com/DanLaZ "Daniel LaZenberry")
 (https://github.com/CodeNode21 "Mat Bednara")
-
-#>_The Mission
-App Demo
-
----
-Team Members
-
 ---,
 
 
