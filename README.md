@@ -5,10 +5,10 @@
 
 ###Table of Contents
 Team Members
-https://github.com/DanLaZ
-https://github.com/abigailettore
-https://github.com/anagabitec
-https://github.com/CodeNode21
+(https://github.com/abigailettore "Abby Ettore")
+(https://github.com/anagabitec "Ana Gabriella Menezes")
+(https://github.com/DanLaZ "Daniel LaZenberry")
+(https://github.com/CodeNode21 "Mat Bednara")
 
 #>_The Mission
 App Demo
