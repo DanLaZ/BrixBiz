@@ -1,29 +1,32 @@
 ### Project2
-(Name, Logo, Icon) #ScoutOut?
-(Catchphrase) Small world for small businesses
+**brixbiz**
+Where brick and mortar meets the web.
 ---
 
 ###Table of Contents
-#>_Team Members
-#>_The Mission
-#>_App Demo
-,
+# Team Members
+# The Mission
+# App Demo
+
 ---
 ##Team Members
-(https://github.com/abigailettore "Abby Ettore"),
+[Abby Ettore](https://github.com/abigailettore)
 
-(https://github.com/anagabitec "Ana Gabriella Menezes"),
+[Ana Gabriella Menezes](https://github.com/anagabitec)
 
-(https://github.com/DanLaZ "Daniel LaZenberry"),
+[Daniel LaZenberry](https://github.com/DanLaZ)
 
-(https://github.com/CodeNode21 "Mat Bednara"),
+[Mat Bednara](https://github.com/CodeNode21)
 
----,
+---
 Abstract:
-    App designed to drive consumer traffic to small businesses. 
-    User can find verified small businesses by type of business or by item in stock. 
-    Businesses are able to advertise themselves via their profile and include their inventory online. 
-    Job seekers can create a courier profile and become a on demand delivery service guided by the application. 
+    It has become very difficult for small business to compete with big corporations. With their multi-million dollar marketing campaigns and global reach, it's no wonder that so many are closing down.
+
+    Brixbiz is designed to provide an alternative to big corporations and drive consumer traffic to small mom and pop shops shops in local area in effect helping out the little guys. 
+
+    Help save brick and mortar business with brixbiz.
+
+
 
 
 
