@@ -1,6 +1,6 @@
 ### Project2
 (Name, Logo, Icon) #ScoutOut?
-(Catchphrase) ##Find it here locally
+(Catchphrase) Small world for small businesses
 ---
 
 ###Table of Contents
@@ -10,19 +10,22 @@
 ,
 ---
 ##Team Members
-(https://github.com/abigailettore "Abby Ettore")
-(https://github.com/anagabitec "Ana Gabriella Menezes")
-(https://github.com/DanLaZ "Daniel LaZenberry")
-(https://github.com/CodeNode21 "Mat Bednara")
+(https://github.com/abigailettore "Abby Ettore"),
+
+(https://github.com/anagabitec "Ana Gabriella Menezes"),
+
+(https://github.com/DanLaZ "Daniel LaZenberry"),
+
+(https://github.com/CodeNode21 "Mat Bednara"),
+
 ---,
 Abstract:
-    In the 
+    App designed to drive consumer traffic to small businesses. 
+    User can find verified small businesses by type of business or by item in stock. 
+    Businesses are able to advertise themselves via their profile and include their inventory online. 
+    Job seekers can create a courier profile and become a on demand delivery service guided by the application. 
 
-Notes
-    Customer feels 
 
 
 
-An introduction (What's the project about?)
-Table of contents (List me all your readme, so I can skim it and see if I'm interested or is what I'm looking for)
-Some design love (A logo, icon, teaser or screen, README's with images look so much better.
+
