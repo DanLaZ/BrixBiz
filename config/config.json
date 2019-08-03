@@ -1,16 +1,11 @@
 {
   "development": {
-    "username": "root",
-    "password": "stellaminha1",
-    "database": "exampledb",
-    "host": "localhost",
+    "use_env_variable": "db_url",
     "dialect": "mysql"
+
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "testdb",
-    "host": "localhost",
+    "use_env_variable": "db_url",
     "dialect": "mysql",
     "logging": false
   },
