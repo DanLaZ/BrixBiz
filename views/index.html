@@ -10,12 +10,17 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <!-- <link rel="stylesheet" href="https://js.arcgis.com/4.12/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.12/"></script> -->
+    
     <style>
-        body {
+        /* HTML BOOTSTRAP CSS */
+        * body {
             font: 20px Montserrat, sans-serif;
             line-height: 1.8;
             color: #f5f6f7;
-        }
+        } */
 
         p {
             font-size: 16px;
@@ -67,10 +72,109 @@
         .navbar-nav li a:hover {
             color: #1abc9c !important;
         }
+    /* css map 
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    } */
     </style>
+
+    <!-- <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/tasks/Locator",
+            "esri/Graphic"
+        ], function (Map, MapView, Locator, Graphic) {
+
+            var map = new Map({
+                basemap: "topo-vector"
+            });
+
+            var view = new MapView({
+                container: "viewDiv",
+                map: map,
+                center: [-118.80543, 34.02700],
+                zoom: 13
+            });
+
+            var places = ["Coffee shop", "Gas station", "Food", "Hotel", "Parks and Outdoors"];
+
+            var select = document.createElement("select", "");
+            select.setAttribute("class", "esri-widget esri-select");
+            select.setAttribute("style", "width: 175px; font-family: Avenir Next W00; font-size: 1em");
+            places.forEach(function (p) {
+                var option = document.createElement("option");
+                option.value = p;
+                option.innerHTML = p;
+                select.appendChild(option);
+            });
+
+            view.ui.add(select, "top-right");
+
+            var locator = new Locator({
+                url: "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+            });
+
+            // Find places and add them to the map
+            function findPlaces(category, pt) {
+                locator.addressToLocations({
+                    location: pt,
+                    categories: [category],
+                    maxLocations: 25,
+                    outFields: ["Place_addr", "PlaceName"]
+                })
+                    .then(function (results) {
+                        view.popup.close();
+                        view.graphics.removeAll();
+                        results.forEach(function (result) {
+                            view.graphics.add(
+                                new Graphic({
+                                    attributes: result.attributes,
+                                    geometry: result.location,
+                                    symbol: {
+                                        type: "simple-marker",
+                                        color: "#000000",
+                                        size: "12px",
+                                        outline: {
+                                            color: "#ffffff",
+                                            width: "2px"
+                                        }
+                                    },
+                                    popupTemplate: {
+                                        title: "{PlaceName}",
+                                        content: "{Place_addr}"
+                                    }
+                                }));
+                        });
+                    });
+            }
+
+            // Search for places in center of map
+            findPlaces(select.value, view.center);
+
+            // Listen for category changes and find places
+            select.addEventListener('change', function (event) {
+                findPlaces(event.target.value, view.center);
+            });
+
+            // Listen for mouse clicks and find places
+            view.on("click", function (event) {
+                view.hitTest(event.screenPoint)
+                    .then(function (response) {
+                        if (response.results.length < 2) { // If graphic is not clicked, find places 
+                            findPlaces(select.options[select.selectedIndex].text, event.mapPoint);
+                        }
+                    })
+            });
+
+        });
+    </script> -->
 </head>
 
-<body>
+<!-- <body> -->
 
     <!-- Navbar -->
     
@@ -105,12 +209,15 @@
             <span class="glyphicon glyphicon-search"></span> Search
         </a>
     </div>
-
+    <!-- <div id="viewDiv"></div> -->
     <!-- Second Container -->
     <div class="container-fluid bg-1 text-center">
-    
-    
-        <img src="googlemapssample.jpg" class="img-responsive" style="display:inline" alt="Bird" width="350" height="500">
+        
+        
+        
+        
+        GOOGLE MAPS <iframe src="https://snazzymaps.com/embed/174936" width="100%" height="500px" style="border:none;"></iframe>
+        <!-- IMAGE MAP <img src="googlemapssample.jpg" class="img-responsive" style="display:inline" alt="Bird" width="350" height="500"> -->
         
     </div>
 
@@ -137,12 +244,14 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Footer -->
     <footer class="container-fluid bg-4 text-center">
         <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
     </footer>
 
+SCRIPT FOR GOOGLE MAPS <script async defer src="https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyBAd1Qlrsp3D7x8rV9K4A_E1zkfcQb7rcM&callback=initMap"
+    type="text/javascript"></script>
 </body>
 
 </html>
