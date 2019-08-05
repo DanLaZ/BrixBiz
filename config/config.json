@@ -1,11 +1,16 @@
 {
   "development": {
-    "use_env_variable": "db_url",
+    "username": "root",
+    "password": null,
+    "database": "exampledb",
+    "host": "localhost",
     "dialect": "mysql"
-
   },
   "test": {
-    "use_env_variable": "db_url",
+    "username": "root",
+    "password": null,
+    "database": "testdb",
+    "host": "localhost",
     "dialect": "mysql",
     "logging": false
   },
@@ -13,5 +18,6 @@
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
+}
 
  
