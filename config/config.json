@@ -2,7 +2,6 @@
   "development": {
     "use_env_variable": "db_url",
     "dialect": "mysql"
-
   },
   "test": {
     "use_env_variable": "db_url",
@@ -13,5 +12,6 @@
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
+}
 
  
