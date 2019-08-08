@@ -12,6 +12,7 @@ module.exports = function(app, passport) {
         failureRedirect: '/signup'
     }))
     
+
     app.get('/dashboard',isLoggedIn, authController.dashboard);
 
     app.get('/home', isLoggedIn, function(req, res){
@@ -24,6 +25,7 @@ module.exports = function(app, passport) {
         successRedirect: '/dashboard',
 
         failureRedirect: '/signin'
+
         
     }));
 
@@ -44,4 +46,3 @@ function isLoggedIn(req, res, next) {
     res.redirect('/signin');
  
 }
-
