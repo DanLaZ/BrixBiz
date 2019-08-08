@@ -5,7 +5,6 @@ module.exports = function(app) {
   app.get("/api/business", function(req, res) {
     db.Business.findAll().then(function (smbusinessdb) {
       res.json(smbusinessdb);
-      
     });
   });
 

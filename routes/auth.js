@@ -23,8 +23,7 @@ module.exports = function(app, passport) {
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
 
-        failureRedirect: '/signin'
-        
+        failureRedirect: '/signin'      
     }));
 
     app.post("/formsubmit", function(req, res) {
@@ -44,4 +43,3 @@ function isLoggedIn(req, res, next) {
     res.redirect('/signin');
  
 }
-

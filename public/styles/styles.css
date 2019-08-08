@@ -55,3 +55,27 @@ body {
         .navbar-nav li a:hover {
             color: #1abc9c !important;
         }
+    h2{
+        color: #1abc9c !important;
+    }
+    .btn {
+        color: #1abc9c;
+        background-color: white;
+    }
+
+    /* .btn:hover {
+      box-shadow: #b8ddd6;
+    }
+
+.btn:active {
+  background-color: #555555; 
+} */
+
+.input-group {        
+    margin-bottom: 10px;
+    margin-top: 10px ;        
+}
+a{
+    
+    color: #1abc9c;
+}
