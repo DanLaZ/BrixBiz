@@ -12,13 +12,13 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/user",
       data: JSON.stringify(example)
     });
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/businesses",
       type: "GET"
     });
   },
@@ -73,9 +73,13 @@ var handleFormSubmit = function(event) {
     alert("You must enter an example text and description!");
     return;
   }
+  // $.post('/formsubmit')
+  // API.saveExample(example).then(function() {
+  //   refreshExamples();
+  // });
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  $.post( '/formsubmit', function(data) {
+    $( "#submit" ).html(data);
   });
 
   $exampleText.val("");
