@@ -1,11 +1,29 @@
 <div class="container-fluid bg-2 text-center">
     <h2 class="margin">brixbiz</h2>
-    <p>Find your people. Engage your customers. Build your brand. Do it all with brixbiz. Already have
-        an account? <a href="/signin">Log in</a></p>
-    <form id="signin" name="signin" method="post" action="signin">
-        <label for="email">Email Address</label>
+    <p>Already have an account?</p>
+    <div class="w-50 container p-4">
+        <div class="container text-left">
+            <form id="signin" name="signin" method="post" action="signin">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                </div>
+                <input class="btn bg-purple" type="submit" value="Sign In"/>
+            </form>
+        </div>
+    </div>    
+        
+
+        {{!-- Abby's PREVIOUS FORM --}}
+        {{!-- <label for="email">Email Address</label>
         <input class="text" name="email" type="text" />
         <label for="password">Password</label>
         <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign In" />
+        <input class="btn" type="submit" value="Sign In" /> --}}
     </form>
+</div>
+

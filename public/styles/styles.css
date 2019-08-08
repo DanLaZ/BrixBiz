@@ -56,5 +56,19 @@ body {
             color: #1abc9c !important;
         }
     h2{
-        color: #1abc9c !important
+        color: #1abc9c !important;
     }
+    .btn {
+        color: #1abc9c;
+        background-color: white;
+    }
+
+    /* .btn:hover {
+      box-shadow: #b8ddd6;
+    }
+
+.btn:active {
+  background-color: #555555; 
+} */
+
+

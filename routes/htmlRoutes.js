@@ -19,7 +19,15 @@ module.exports = function(app) {
       });
     });
   });
-
+  //Load signIN page
+  app.get("/signin", function (req, res) {
+    db.Example.findAll({}).then(function (smbusinessdb) {
+      res.render("signin", {
+        msg: "Welcome!",
+        examples: smbusinessdb
+      });
+    });
+  });
   
   //Load index page
   app.get("/index", function (req, res) {
