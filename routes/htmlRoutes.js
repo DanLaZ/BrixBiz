@@ -19,6 +19,16 @@ module.exports = function(app) {
       });
     });
   });
+
+  //Load ADDBUS page
+  app.get("/addbus", function (req, res) {
+    db.Example.findAll({}).then(function (smbusinessdb) {
+      res.render("addbus", {
+        msg: "Welcome!",
+        examples: smbusinessdb
+      });
+    });
+  });
   //Load signIN page
   app.get("/signin", function (req, res) {
     db.Example.findAll({}).then(function (smbusinessdb) {
@@ -39,6 +49,15 @@ module.exports = function(app) {
     });
   });
 
+  //Load ABOUT US
+  app.get("/aboutus", function (req, res) {
+    db.Example.findAll({}).then(function (smbusinessdb) {
+      res.render("aboutus", {
+        msg: "Welcome!",
+        examples: smbusinessdb
+      });
+    });
+  });
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(
