@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
-  var Business = sequelize.define("Business", {
+  var Business = sequelize.define("business", {
     biz_id: {
       autoIncrement: true,
       primaryKey: true,
@@ -47,6 +47,9 @@ module.exports = function(sequelize, Sequelize) {
     has_profile: {
       type: Sequelize.BOOLEAN
     } 
+  }, 
+  {
+    freezeTableName: true,
   });
   return Business;
 };

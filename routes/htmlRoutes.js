@@ -3,16 +3,17 @@ var db = require("../models");
 module.exports = function(app) {
   //Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(smbusinessdb) {
+    db.Business.findAll({}).then(function(smbusinessdb) {
       res.render("index", {
         msg: "Welcome!",
         examples: smbusinessdb
+        
       });
     });
   });
   //Load signup page
   app.get("/signup", function(req, res) {
-    db.Example.findAll({}).then(function(smbusinessdb) {
+    db.User.findAll({}).then(function(smbusinessdb) {
       res.render("signup", {
         msg: "Welcome!",
         examples: smbusinessdb
@@ -31,7 +32,7 @@ module.exports = function(app) {
   });
   //Load signIN page
   app.get("/signin", function (req, res) {
-    db.Example.findAll({}).then(function (smbusinessdb) {
+    db.User.findAll({}).then(function (smbusinessdb) {
       res.render("signin", {
         msg: "Welcome!",
         examples: smbusinessdb
@@ -41,7 +42,7 @@ module.exports = function(app) {
   
   //Load index page
   app.get("/index", function (req, res) {
-    db.Example.findAll({}).then(function (smbusinessdb) {
+    db.Business.findAll({}).then(function (smbusinessdb) {
       res.render("index", {
         msg: "Welcome!",
         examples: smbusinessdb
@@ -51,7 +52,7 @@ module.exports = function(app) {
 
   //Load ABOUT US
   app.get("/aboutus", function (req, res) {
-    db.Example.findAll({}).then(function (smbusinessdb) {
+    db.Business.findAll({}).then(function (smbusinessdb) {
       res.render("aboutus", {
       });
     });
@@ -59,7 +60,7 @@ module.exports = function(app) {
     
   // Load example page and pass in an example by id
   app.get("/business/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
+    db.Business.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
       res.render("business", {
         example: smbusinessdb
       });
