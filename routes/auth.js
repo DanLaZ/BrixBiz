@@ -10,9 +10,8 @@ module.exports = function(app, passport) {
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/dashboard',
         failureRedirect: '/signup'
-    }
+    }))
     
-));
 
     app.get('/dashboard',isLoggedIn, authController.dashboard);
 
@@ -26,9 +25,19 @@ module.exports = function(app, passport) {
         successRedirect: '/dashboard',
 
         failureRedirect: '/signin'
-    }
 
-));
+        
+    }));
+
+    app.post("/formsubmit", function(req, res) {
+        req.body.email;
+        req.body.firstname;
+        req.body.lastname;
+        req.body.password;
+        res.send('completed');
+    })
+};
+
 function isLoggedIn(req, res, next) {
  
     if (req.isAuthenticated()){
@@ -36,5 +45,4 @@ function isLoggedIn(req, res, next) {
     }   
     res.redirect('/signin');
  
-}
 }
