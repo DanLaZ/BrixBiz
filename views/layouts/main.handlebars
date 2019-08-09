@@ -34,7 +34,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/server.js"></script>
   <script>
+    
     function initMap() {
         var options = {
           zoom: 12.25,
@@ -74,8 +76,9 @@
         }
       }
   </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn43_KLEeDupVwxN3uKmSkcRNZPePRdIw&callback=initMap"
-      type="text/javascript"></script>
+    
+    <script>
+     var googleapi = process.env.GoogleAPI;</script>
 </body>
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">

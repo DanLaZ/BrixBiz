@@ -2,6 +2,9 @@ var db = require("../models");
 
 var googleapi = process.env.GoogleAPI;
 
+require("dotenv").config();
+console.log(process.env); 
+
 
 
 module.exports = function(app) {
@@ -25,8 +28,8 @@ module.exports = function(app) {
   });
 
   //Load ADDBUS page
-  app.get("/addbus", function (req, res) {
-    db.Example.findAll({}).then(function (smbusinessdb) {
+  app.get("/addbus", function(req, res) {
+    db.Example.findAll({}).then(function(smbusinessdb) {
       res.render("addbus", {
         msg: "Welcome!",
         examples: smbusinessdb
@@ -34,29 +37,29 @@ module.exports = function(app) {
     });
   });
   //Load signIN page
-  app.get("/signin", function (req, res) {
-    db.Example.findAll({}).then(function (smbusinessdb) {
+  app.get("/signin", function(req, res) {
+    db.Example.findAll({}).then(function(smbusinessdb) {
       res.render("signin", {
         msg: "Welcome!",
         examples: smbusinessdb
       });
     });
   });
-  
+
   //Load index page
-  app.get("/index", function (req, res) {
-    db.Example.findAll({}).then(function (smbusinessdb) {
+  app.get("/index", function(req, res) {
+    db.Example.findAll({}).then(function(smbusinessdb) {
       res.render("index", {
         msg: "Welcome!",
         examples: smbusinessdb,
-        googleapi : googleapi,
+        googleapi: googleapi
       });
     });
   });
 
   //Load ABOUT US
-  app.get("/aboutus", function (req, res) {
-    db.Example.findAll({}).then(function (smbusinessdb) {
+  app.get("/aboutus", function(req, res) {
+    db.Example.findAll({}).then(function(smbusinessdb) {
       res.render("aboutus", {
         msg: "Welcome!",
         examples: smbusinessdb
