@@ -3,7 +3,7 @@ var connection = require("../server.js");
 
 // helper function for SQL syntax
 // passing 3 values into the mySQL query
-function getGeoLocation(num){
+function printQuestionMarks(num){
     var arr = [];
     for (var i =0; i < num; i++){
         arr.push("?");

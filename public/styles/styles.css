@@ -55,3 +55,11 @@ body {
         .navbar-nav li a:hover {
             color: #1abc9c !important;
         }
+
+        .form-group{
+            width: 300px;
+            color: black;
+            padding: 10px;
+            float: right;
+            margin-right: 10%;
+        }
