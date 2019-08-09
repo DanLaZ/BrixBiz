@@ -34,6 +34,48 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="js/index.js"></script>
+  <script>
+    function initMap() {
+        var options = {
+          zoom: 12.25,
+          center: {
+            lat: 40.6782,
+            lng: -73.9442
+          },
+          mapTypeId: "roadmap"
+        };
+
+        // New Map
+        var map = new google.maps.Map(document.getElementById("map"), options);
+
+        //   // //Add Marker
+        var marker = new google.maps.Marker({
+          position: { lat: 40.6782, lng: -73.9442 },
+          map: map,
+          icon: ' ',
+        });
+        
+
+        addMarker({
+          coord: { lat: 40.6826, lng: -73.9754 },
+          iconImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfDST0LL_KuS-m0NCo9xVju719WHnwFdI3qug7tHcycQSScRoulA'
+        });
+
+        function addMarker(props) {
+          var marker = new google.maps.Marker({
+            position: props.coords,
+            map: map
+            // icon: props.iconImage
+          });
+
+          if (props.iconImage) {
+            marker.setIcon(props.iconImage);
+          }
+        }
+      }
+  </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn43_KLEeDupVwxN3uKmSkcRNZPePRdIw&callback=initMap"
+      type="text/javascript"></script>
 </body>
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">

@@ -1,5 +1,9 @@
 var db = require("../models");
 
+var googleapi = process.env.GoogleAPI;
+
+
+
 module.exports = function(app) {
   //Load index page
   app.get("/", function(req, res) {
@@ -44,7 +48,8 @@ module.exports = function(app) {
     db.Example.findAll({}).then(function (smbusinessdb) {
       res.render("index", {
         msg: "Welcome!",
-        examples: smbusinessdb
+        examples: smbusinessdb,
+        googleapi : googleapi,
       });
     });
   });
