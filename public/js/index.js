@@ -101,3 +101,24 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+$("#search").on("click", getLocation);
+// Getting user's geolocation
+function getLocation() {
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+    console.log(navigator.geolocation)
+  } else{
+    alert("Your browser doesn't support Geolocation");
+  }
+}
+//
+function onGeoSuccess(event){
+
+  var longitude = event.coords.longitude;
+  var latitude = event.coords.latitude;
+  console.log(latitude,longitude);
+}
+function onGeoError(event) {
+  alert("Error code " + event.code + ". " + event.message);
+}
