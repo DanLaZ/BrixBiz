@@ -1,6 +1,7 @@
 ### Project2
 **brixbiz**
 Where brick and mortar meets the web.
+https://projectdlaembgm.herokuapp.com/
 ---
 
 ###Table of Contents
