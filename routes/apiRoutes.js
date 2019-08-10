@@ -21,7 +21,9 @@ module.exports = function(app) {
   });
 
   // Create a new business
-  app.post("/api/businesses", function(req, res) {
+  app.post("/api/business", function(req, res) {
+    console.log("business form");
+    console.log(req.body);
     db.business.create(req.body)
     .then(function (dbBusiness) {
       res.json(dbBusiness);
