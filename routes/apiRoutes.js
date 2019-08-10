@@ -1,32 +1,64 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/business", function(req, res) {
-    db.Business.findAll().then(function (smbusinessdb) {
-      res.json(smbusinessdb);
+  // Get all businesses
+  app.get("/api/businesses", function(req, res) {
+    db.business.findAll({})
+    .then(function (dbBusiness) {
+      res.json(dbBusiness);
     });
   });
 
-  // Create a new example
-  app.post("/api/business", function(req, res) {
-    db.Business.create(req.body).then(function (smbusinessdb) {
-      res.json(smbusinessdb);
+  // Get one business by id
+  app.get("/api/business/:id", function(req, res) {
+    db.business.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbBusiness) {
+      res.json(dbBusiness);
     });
   });
 
-  app.post("/api/signup", function(req, res) {
-    db.User.create(req.body).then(function (usersdb) {
-      res.json(usersdb);
+  // Create a new business
+  app.post("/api/businesses", function(req, res) {
+    db.business.create(req.body)
+    .then(function (dbBusiness) {
+      res.json(dbBusiness);
     });
   });
 
-  // Delete an example by id
+  // Get one user by id
+  app.get("/api/user/:id", function(req, res) {
+    db.user.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+ 
+  // Create a new user
+  app.post("/api/users", function(req, res) {
+    db.user.create(req.body)
+    .then(function (dbUser) {
+      res.json(dbUser);
+    });
+  });
+
+  // Delete a business by id
   app.delete("/api/business/:id", function(req, res) {
-    db.Business.destroy({ where: { id: req.params.id } }).then(function (smbusinessdb) {
-      res.json(smbusinessdb);
+    db.business.destroy({ 
+      where: { 
+        id: req.params.id 
+      } 
+    })
+    .then(function (dbBusiness) {
+      res.json(dbBusiness);
     });
   });
+
 };
 
 console.log("Hi there! from apiRoutes.js line 33");
