@@ -66,15 +66,7 @@ module.exports = function(sequelize, DataTypes) {
       {
         biz_name: "The Meat Hook",
         biz_type: "Butcher",
-        biz_address: "426 Graham Ave, Brooklyn, NY",
-        biz_zip: 11211,
-        LAT: 40.716800,
-        LNG: -73.944930
-      },
-      {
-        biz_name: "The Meat Hook",
-        biz_type: "Butcher",
-        biz_address: "426 Graham Ave, Brooklyn, NY",
+        biz_address: "397 Graham Ave, Brooklyn, NY",
         biz_zip: 11211,
         LAT: 40.716800,
         LNG: -73.944930

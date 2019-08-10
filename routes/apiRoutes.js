@@ -47,28 +47,6 @@ module.exports = function(app) {
     });
   });
 
-  
-  app.get("/api/users", function(req, res) {
-    const email = req.query.username;
-    const password = req.query.password;
-  
-    db.user.findAll({
-      where: {
-        email: req.params.email,
-        password: req.params.password
-      }
-    }).then(function(dbUser) {
-      // res.json(dbUser);
-      if (dbUser != null) {
-        res.redirect("/users");
-      } else {
-        // you'd maybe like to set response status to 404
-        // also some user friendly error message could be good as response body
-        console.log("Error: user not found");
-      }
-    });
-  });
-
   // Delete a business by id
   app.delete("/api/business/:id", function(req, res) {
     db.business.destroy({ 
