@@ -3,17 +3,21 @@ var db = require("../models");
 
 module.exports = function (app) {
   //Load index page
-  app.get("/", function (req, res) {
-    db.Business.findAll({}).then(function (smbusinessdb) {
+
+  app.get("/", function(req, res) {
+    db.business.findAll({}).then(function(smbusinessdb) {
+
       res.render("index", {
         msg: "Welcome!",
         examples: smbusinessdb
+        
       });
     });
   });
 
-  app.get("/signup", function (req, res) {
-    db.Example.findAll({}).then(function (smbusinessdb) {
+  //Load signup page
+  app.get("/signup", function(req, res) {
+    db.user.findAll({}).then(function(smbusinessdb) {
       res.render("signup", {
         msg: "Welcome!",
         examples: smbusinessdb
@@ -22,38 +26,72 @@ module.exports = function (app) {
   });
   
 
-  app.get("/businesses", function (req, res) {
-    res.render("businesses");
-  });
 
-  app.get("/courier", function (req, res) {
-    res.render("courier");
-  });
-  
-  app.get("/aboutus", function (req, res) {
-    res.render("aboutus");
-  });
-  
-  app.get("/index", function (req, res) {
-    res.render("index");
-  });
-
-  app.get("/index", function (req, res) {
-    res.render("index");
-  });
-
+  //Load ADDBUS page
   app.get("/addbus", function (req, res) {
-    res.render("addbus");
+    db.business.findAll({}).then(function (smbusinessdb) {
+      res.render("addbus", {
+        msg: "Welcome!",
+        examples: smbusinessdb
+      });
+    });
+  });
+  //Load signIN page
+  app.get("/signin", function (req, res) {
+    db.user.findAll({}).then(function (smbusinessdb) {
+      res.render("signin", {
+        msg: "Welcome!",
+        examples: smbusinessdb
+      });
+    });
   });
 
+  //Load index page
+  app.get("/index", function (req, res) {
+    db.business.findAll({}).then(function (smbusinessdb) {
+      res.render("index", {
+        msg: "Welcome!",
+        examples: smbusinessdb,
+        googleapi: googleapi
+      });
+    });
+  });
+
+  //Load ABOUT US
+  app.get("/aboutus", function (req, res) {
+    db.business.findAll({}).then(function () {
+      res.render("aboutus", {
+      });
+    });
+  });
+
+  //Load dash board page
+  app.get("/dashboard", function (req, res) {
+    db.business.findAll({}).then(function () {
+      res.render("dashboard", {
+      });
+    });
+  });
+    
   // Load example page and pass in an example by id
-  app.get("/business/:id", function (req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
+  app.get("/business/:id", function(req, res) {
+    db.business.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
+
       res.render("business", {
         example: smbusinessdb
       });
     });
   });
+  
+  app.get("/businesses", function(req, res) {
+    res.render("businesses");
+  });
+
+  app.get("/courier", function(req, res) {
+    res.render("courier");
+  });
+
+
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
