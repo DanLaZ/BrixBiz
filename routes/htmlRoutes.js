@@ -61,17 +61,14 @@ module.exports = function(app) {
   app.get("/aboutus", function(req, res) {
     db.Example.findAll({}).then(function(smbusinessdb) {
       res.render("aboutus", {
-        msg: "Welcome!",
-        examples: smbusinessdb
       });
     });
   });
+    
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      smbusinessdb
-    ) {
-      res.render("example", {
+  app.get("/business/:id", function(req, res) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
+      res.render("business", {
         example: smbusinessdb
       });
     });
