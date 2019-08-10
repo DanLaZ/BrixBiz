@@ -97,7 +97,58 @@ var handleDeleteBtnClick = function() {
     refreshExamples();
   });
 };
-
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+
+
+
+
+
+
+$("#search").on("click", getLocation);
+// Getting user's geolocation
+function getLocation() {
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+    console.log(navigator.geolocation)
+  } else{
+    alert("Your browser doesn't support Geolocation");
+  }
+}
+//
+function onGeoSuccess(event){
+
+  var longitude = event.coords.longitude;
+  var latitude = event.coords.latitude;
+  console.log(latitude,longitude);
+  return (latitude, longitude);
+}
+function onGeoError(event) {
+  alert("Error code " + event.code + ". " + event.message);
+}
+
+
+// Display card for businesses to join brixbiz
+// event listener
+$("#biz-join").on("click", function(){
+  event.preventDefault();
+  $("#biz-join").hide();
+  
+  <div class= "form-group">
+<form class="clearfix mb-4" action="POST">
+    <div class="form-group">
+    <label for="email">Email Address</label>
+    <input class="text" name="email" type="email" />
+    <label for="firstname">First Name</label>
+    <input name="firstname" type="text" />
+    <label for="lastname">Last Name</label>
+    <input name="lastname" type="text" />
+    <label for="password">Password</label>
+    <input name="password" type="password" />
+    <input class="btn" type="submit" value="Sign Up" />
+    <button id="submit" class="btn btn-primary float-right">Submit</button>
+</form>
+</div>
+})

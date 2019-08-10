@@ -1,3 +1,25 @@
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="/">brixbiz</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="#">About Us</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+<h1>{{msg}}</h1>
+<div class= "form-group">
+<form class="clearfix mb-4" action="POST">
+
 <div class="container-fluid bg-2 text-center">
     <h2 class="margin">brixbiz</h2>
     <p align="left"> Find your people. Engage your customers. Build your brand. Do it all with brixbiz. 
@@ -35,16 +57,32 @@
     </div>
 {{!-- PREVIOUS FORM FROM ABBY --}}
 {{!-- <form class="clearfix mb-4" action="POST">
+
     <div class="form-group">
     <label for="email">Email Address</label>
     <input class="text" name="email" type="email" />
-    <label for="firstname">Firstname</label>
+    <label for="firstname">First Name</label>
     <input name="firstname" type="text" />
-    <label for="lastname">Lastname</label>
+    <label for="lastname">Last Name</label>
     <input name="lastname" type="text" />
     <label for="password">Password</label>
     <input name="password" type="password" />
     <input class="btn" type="submit" value="Sign Up" />
     <button id="submit" class="btn btn-primary float-right">Submit</button>
+
+</form>
+</div>
+<h3></h3>
+<ul id="example-list" class="list-group">
+    {{#each examples}}
+    <li data-id="{{this.id}}" class="list-group-item">
+        <a href="example/{{this.id}}">{{this.text}}</a>
+        <button class="btn btn-danger float-right delete">ｘ</button>
+    </li>
+    {{/each}}
+</ul>
+
+
 </form> --}}
 </div>
+

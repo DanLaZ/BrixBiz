@@ -24,7 +24,7 @@ Abstract:
 
     Brixbiz is designed to provide an alternative to big corporations and drive consumer traffic to small mom and pop shops shops in local area in effect helping out the little guys. 
 
-    Help save brick and mortar business with brixbiz.
+    Brixbiz is a community of small businesses.
 
 
 

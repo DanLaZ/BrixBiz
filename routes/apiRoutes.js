@@ -15,9 +15,9 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/signup", function(req, res) {
-    db.User.create(req.body).then(function (smbusinessdb) {
-      res.json(smbusinessdb);
+  app.post("/api/signup", function(req, res) {
+    db.User.create(req.body).then(function (usersdb) {
+      res.json(usersdb);
     });
   });
 
@@ -29,4 +29,4 @@ module.exports = function(app) {
   });
 };
 
-console.log("Hi there!");
+console.log("Hi there! from apiRoutes.js line 33");

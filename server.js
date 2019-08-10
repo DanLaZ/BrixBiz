@@ -15,23 +15,22 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Middleware
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(express.static("public"));
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// app.use(express.urlencoded({extended: false}))
 // For Passport
+
 
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
 ); // session secret
+
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-app.use(express.json());
-app.use(express.static("./app/public"));
+
 
 //For Handlebars
 app.engine(
