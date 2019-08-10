@@ -52,7 +52,7 @@ module.exports = function (app) {
       res.render("index", {
         msg: "Welcome!",
         examples: smbusinessdb,
-        googleapi: googleapi
+
       });
     });
   });

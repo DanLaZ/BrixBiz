@@ -65,7 +65,7 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
+  var businessForm = {
     text: $exampleText.val().trim(),
     description: $exampleDescription.val().trim()
   };
@@ -132,24 +132,17 @@ function onGeoError(event) {
 
 
 // Display card for businesses to join brixbiz
-// event listener
-$("#biz-join").on("click", function(){
+// event listener for business submit form on addbus.handlebars
+$("#submits").on("click", function(){
   event.preventDefault();
-  $("#biz-join").hide();
-  
-  <div class= "form-group">
-<form class="clearfix mb-4" action="POST">
-    <div class="form-group">
-    <label for="email">Email Address</label>
-    <input class="text" name="email" type="email" />
-    <label for="firstname">First Name</label>
-    <input name="firstname" type="text" />
-    <label for="lastname">Last Name</label>
-    <input name="lastname" type="text" />
-    <label for="password">Password</label>
-    <input name="password" type="password" />
-    <input class="btn" type="submit" value="Sign Up" />
-    <button id="submit" class="btn btn-primary float-right">Submit</button>
-</form>
-</div>
+  var newBiz = {
+    biz_name: $("#biz_name").val().trim(),
+    biz_type: $("#biz_type").val().trim(),
+    biz_address: $("#biz_address").val().trim(),
+    biz_zip: $("#biz_zip").val().trim(),
+    biz_email: $("#biz_email").val().trim(),
+    biz_password: $("#biz_password").val().trim()
+  }
+  console.log(newBiz);
+
 })
