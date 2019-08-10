@@ -35,7 +35,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="js/index.js"></script>
-  <script src="js/server.js"></script>
+  
   <script>
     
     function initMap() {
@@ -78,8 +78,9 @@
       }
   </script>
     
-    <script>
-     var googleapi = process.env.GoogleAPI;</script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=BLANK4&callback=initMap">
+      </script>
 </body>
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">

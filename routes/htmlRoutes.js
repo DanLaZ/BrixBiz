@@ -1,16 +1,12 @@
 var db = require("../models");
 
-var googleapi = process.env.GoogleAPI;
 
-require("dotenv").config();
-console.log(process.env); 
-
-
-
-module.exports = function(app) {
+module.exports = function (app) {
   //Load index page
+
   app.get("/", function(req, res) {
     db.business.findAll({}).then(function(smbusinessdb) {
+
       res.render("index", {
         msg: "Welcome!",
         examples: smbusinessdb
@@ -18,6 +14,7 @@ module.exports = function(app) {
       });
     });
   });
+
   //Load signup page
   app.get("/signup", function(req, res) {
     db.user.findAll({}).then(function(smbusinessdb) {
@@ -27,6 +24,8 @@ module.exports = function(app) {
       });
     });
   });
+  
+
 
   //Load ADDBUS page
   app.get("/addbus", function (req, res) {
@@ -77,6 +76,7 @@ module.exports = function(app) {
   // Load example page and pass in an example by id
   app.get("/business/:id", function(req, res) {
     db.business.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
+
       res.render("business", {
         example: smbusinessdb
       });
@@ -94,7 +94,7 @@ module.exports = function(app) {
 
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };

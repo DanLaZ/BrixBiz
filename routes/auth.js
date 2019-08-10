@@ -1,6 +1,7 @@
 var authController = require('../controllers/authcontroller.js');
 var db = require("../models");
 
+
  
 module.exports = function(app, passport) {
  
@@ -33,9 +34,8 @@ module.exports = function(app, passport) {
     if (req.isAuthenticated()) {
       return next();
     }
-    res.redirect("/signin");
-  }
 };
+
 
 function isLoggedIn(req, res, next) {
  
