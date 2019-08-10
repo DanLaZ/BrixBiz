@@ -47,4 +47,5 @@ function isLoggedIn(req, res, next) {
 }
 
 console.log("Auth is here to stay!!!");
+};
 
