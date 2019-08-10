@@ -3,7 +3,45 @@ var db = require("../models");
 module.exports = function(app) {
   //Load index page
   app.get("/", function(req, res) {
-    db.Business.findAll({}).then(function (smbusinessdb) {
+    db.Example.findAll({}).then(function(smbusinessdb) {
+      res.render("index", {
+        msg: "Welcome!",
+        examples: smbusinessdb
+      });
+    });
+  });
+  //Load signup page
+  app.get("/signup", function(req, res) {
+    db.Example.findAll({}).then(function(smbusinessdb) {
+      res.render("signup", {
+        msg: "Welcome!",
+        examples: smbusinessdb
+      });
+    });
+  });
+
+  //Load ADDBUS page
+  app.get("/addbus", function (req, res) {
+    db.Example.findAll({}).then(function (smbusinessdb) {
+      res.render("addbus", {
+        msg: "Welcome!",
+        examples: smbusinessdb
+      });
+    });
+  });
+  //Load signIN page
+  app.get("/signin", function (req, res) {
+    db.Example.findAll({}).then(function (smbusinessdb) {
+      res.render("signin", {
+        msg: "Welcome!",
+        examples: smbusinessdb
+      });
+    });
+  });
+  
+  //Load index page
+  app.get("/index", function (req, res) {
+    db.Example.findAll({}).then(function (smbusinessdb) {
       res.render("index", {
         msg: "Welcome!",
         examples: smbusinessdb
@@ -11,14 +49,14 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/signup", function (req, res) {
+  //Load ABOUT US
+  app.get("/aboutus", function (req, res) {
     db.Example.findAll({}).then(function (smbusinessdb) {
-      res.render("signup", {
-        msg: "Welcome!",
-        examples: smbusinessdb
+      res.render("aboutus", {
       });
     });
   });
+    
   // Load example page and pass in an example by id
   app.get("/business/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {

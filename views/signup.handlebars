@@ -1,4 +1,5 @@
 
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -18,6 +19,45 @@
 <h1>{{msg}}</h1>
 <div class= "form-group">
 <form class="clearfix mb-4" action="POST">
+
+<div class="container-fluid bg-2 text-center">
+    <h2 class="margin">brixbiz</h2>
+    <p align="left"> Find your people. Engage your customers. Build your brand. Do it all with brixbiz. Already have
+        an account? 
+        <p align="left">Existing User <a href="/signin">Log in Here</a></p>
+        <p align="left">Businnes owner <a href="/addbus">Sign Up Here</a></p>
+        <br>
+    <div class="w-50 container p-4">
+    <div class="container text-left">
+ 
+        <form class="clearfix mb-4" action="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="firstname" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="lastname" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <input class="btn" type="submit" value="Sign Up" />
+            <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+    </div>
+    </div>
+{{!-- PREVIOUS FORM FROM ABBY --}}
+{{!-- <form class="clearfix mb-4" action="POST">
+
     <div class="form-group">
     <label for="email">Email Address</label>
     <input class="text" name="email" type="email" />
@@ -29,6 +69,7 @@
     <input name="password" type="password" />
     <input class="btn" type="submit" value="Sign Up" />
     <button id="submit" class="btn btn-primary float-right">Submit</button>
+
 </form>
 </div>
 <h3></h3>
@@ -40,4 +81,8 @@
     </li>
     {{/each}}
 </ul>
+
+
+</form> --}}
+</div>
 
