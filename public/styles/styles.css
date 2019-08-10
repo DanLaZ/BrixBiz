@@ -43,8 +43,8 @@ body {
         }
 
         .navbar {
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             border: 0;
             border-radius: 0;
             margin-bottom: 0;
@@ -54,6 +54,7 @@ body {
 
         .navbar-nav li a:hover {
             color: #1abc9c !important;
+            
         }
 
     h2{
@@ -64,20 +65,23 @@ body {
         background-color: white;
     }
 
-    /* .btn:hover {
+    /* /* .btn:hover {
       box-shadow: #b8ddd6;
-    }
+    } */
 
-.btn:active {
+/* .btn:active {
   background-color: #555555; 
-} */
+} */ 
 
+#map {
+            border: 2px solid #333;
+            height: 550px;
+            width: 100%;
+        }
 .input-group {        
     margin-bottom: 10px;
     margin-top: 10px ;        
 }
-a{
+
     
-    color: #1abc9c;
-}
 
