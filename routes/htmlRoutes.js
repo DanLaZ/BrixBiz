@@ -51,8 +51,7 @@ module.exports = function (app) {
     db.business.findAll({}).then(function (smbusinessdb) {
       res.render("index", {
         msg: "Welcome!",
-        examples: smbusinessdb,
-        googleapi: googleapi
+        examples: smbusinessdb
       });
     });
   });
