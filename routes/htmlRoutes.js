@@ -1,72 +1,26 @@
 var db = require("../models");
 
-var googleapi = process.env.GoogleAPI;
-
-require("dotenv").config();
-console.log(process.env); 
-
-
-
-module.exports = function(app) {
+module.exports = function (app) {
   //Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(smbusinessdb) {
+  app.get("/", function (req, res) {
+    db.Business.findAll({}).then(function (smbusinessdb) {
       res.render("index", {
         msg: "Welcome!",
         examples: smbusinessdb
       });
     });
   });
-  //Load signup page
-  app.get("/signup", function(req, res) {
-    db.Example.findAll({}).then(function(smbusinessdb) {
+
+  app.get("/signup", function (req, res) {
+    db.Example.findAll({}).then(function (smbusinessdb) {
       res.render("signup", {
         msg: "Welcome!",
         examples: smbusinessdb
       });
     });
   });
-
-  //Load ADDBUS page
-  app.get("/addbus", function(req, res) {
-    db.Example.findAll({}).then(function(smbusinessdb) {
-      res.render("addbus", {
-        msg: "Welcome!",
-        examples: smbusinessdb
-      });
-    });
-  });
-  //Load signIN page
-  app.get("/signin", function(req, res) {
-    db.Example.findAll({}).then(function(smbusinessdb) {
-      res.render("signin", {
-        msg: "Welcome!",
-        examples: smbusinessdb
-      });
-    });
-  });
-
-  //Load index page
-  app.get("/index", function(req, res) {
-    db.Example.findAll({}).then(function(smbusinessdb) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: smbusinessdb,
-        googleapi: googleapi
-      });
-    });
-  });
-
-  //Load ABOUT US
-  app.get("/aboutus", function(req, res) {
-    db.Example.findAll({}).then(function(smbusinessdb) {
-      res.render("aboutus", {
-      });
-    });
-  });
-    
   // Load example page and pass in an example by id
-  app.get("/business/:id", function(req, res) {
+  app.get("/business/:id", function (req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
       res.render("business", {
         example: smbusinessdb
@@ -74,8 +28,18 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/businesses", function (req, res) {
+    res.render("businesses");
+  });
+
+  app.get("/courier", function (req, res) {
+    res.render("courier");
+  });
+
+
+
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
