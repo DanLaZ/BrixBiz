@@ -1,4 +1,6 @@
 var authController = require('../controllers/authcontroller.js');
+var db = require("../models");
+
  
 module.exports = function(app, passport) {
  
@@ -17,12 +19,12 @@ module.exports = function(app, passport) {
     app.get('/home', isLoggedIn, function(req, res){
         res.send("this route is protected")
     })
+
     
     app.get('/logout',authController.logout);
 
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
-
         failureRedirect: '/signin'      
     }));
 
@@ -43,3 +45,5 @@ function isLoggedIn(req, res, next) {
     res.redirect('/signin');
  
 }
+
+console.log("Auth is here to stay!!!");

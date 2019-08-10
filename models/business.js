@@ -1,72 +1,75 @@
-// Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references my connection to the DB.
-var sequelize = require("../config/connection.js");
-
-
-module.exports = function(sequelize, Sequelize) {
+module.exports = function(sequelize, DataTypes) {
   var Business = sequelize.define("business", {
     biz_id: {
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
 
     biz_name: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       notEmpty: true
     },
 
     biz_type: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       notEmpty: true
     },
 
     biz_address: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
 
     biz_zip: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
 
     LAT: {
-      type: Sequelize.DECIMAL,
+      type: DataTypes.DECIMAL(9,6),
       allowNull: false
     },
 
     LNG: {
-      type: Sequelize.DECIMAL,
+      type: DataTypes.DECIMAL(9,6),
       allowNull: false
     },
 
     is_small_biz: {
-      type: Sequelize.BOOLEAN
+      type: DataTypes.BOOLEAN
     },
 
     year_est: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
      
     },
     has_profile: {
-      type: Sequelize.BOOLEAN
+      type: DataTypes.BOOLEAN
     } 
   }, 
   {
     freezeTableName: true,
   });
 
-  Business.sync({force: true}).then(function() {
+  Business.sync({force: true})
+  .then(function() {
     // Table created
-    return Business.create(
+    return Business.bulkCreate([
       
       {      
-      biz_name: "Emily's Pork Store",
-      biz_type: "Butcher",
-      biz_address: "426 Graham Ave, Brooklyn, NY",
-      biz_zip: 11211,
-      LAT: 40.717650,
-      LNG: -73.944570   
+        biz_name: "Emily's Pork Store",
+        biz_type: "Butcher",
+        biz_address: "426 Graham Ave, Brooklyn, NY",
+        biz_zip: 11211,
+        LAT: 40.717650,
+        LNG: -73.944570   
+      },
+      {
+        biz_name: "The Meat Hook",
+        biz_type: "Butcher",
+        biz_address: "426 Graham Ave, Brooklyn, NY",
+        biz_zip: 11211,
+        LAT: 40.716800,
+        LNG: -73.944930
       },
       {
         biz_name: "The Meat Hook",
@@ -123,8 +126,9 @@ module.exports = function(sequelize, Sequelize) {
         biz_zip: 11222,
         LAT: 40.725550,
         LNG: -73.952060
-      }  
-    );
+      }
+    ]); 
+    
   });
   
   return Business;

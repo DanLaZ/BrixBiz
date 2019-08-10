@@ -1,76 +1,86 @@
 var db = require("../models");
-var business = require("../models/business.js");
 
-// module.exports = function(app) {
-//   // Get all examples
-//   app.get("/api/business", function(req, res) {
-//     db.Business.findAll().then(function (smbusinessdb) {
-//       res.json(smbusinessdb);
-//     });
-//   });
-
-
-//   // Create a new example
-//   app.post("/api/business", function(req, res) {
-//     db.Business.create(req.body).then(function (smbusinessdb) {
-//       res.json(smbusinessdb);
-//     });
-//   });
-
-//   app.post("/signup", function(req, res) {
-//     db.User.create(req.body).then(function (smbusinessdb) {
-//       res.json(smbusinessdb);
-//     });
-//   });
-
-//   // Delete an example by id
-//   app.delete("/api/business/:id", function(req, res) {
-//     db.Business.destroy({ where: { id: req.params.id } }).then(function (smbusinessdb) {
-//       res.json(smbusinessdb);
-//     });
-//   });
-// };
-
-module.exports = function(app, db) {
-  
-  app.get("/api/all", function(req, res) {
-    db.business.findAll({}).then(function(results) {
-      res.json(results);
-      console.log("Hey I'm here");
+module.exports = function(app) {
+  // Get all businesses
+  app.get("/api/businesses", function(req, res) {
+    db.business.findAll({})
+    .then(function (dbBusiness) {
+      res.json(dbBusiness);
     });
   });
 
-
-  app.get( "/api/business/:id", (req, res) =>
-    db.business.findByPk(req.params.id).then( (result) => res.json(result))
-  );
-
-  app.post("/post", (req, res) => 
-    db.business.create({
-      title: req.body.title,
-      content: req.body.content
-    }).then( (result) => res.json(result) )
-  );
-
-  app.put( "/api/business/:id", (req, res) =>
-    db.business.update({
-      title: req.body.title,
-      content: req.body.content
-    },
-    {
+  // Get one business by id
+  app.get("/api/business/:id", function(req, res) {
+    db.business.findOne({
       where: {
         id: req.params.id
       }
-    }).then( (result) => res.json(result) )
-  );
+    }).then(function(dbBusiness) {
+      res.json(dbBusiness);
+    });
+  });
 
-  app.delete( "/post/:id", (req, res) =>
-    db.business.destroy({
+  // Create a new business
+  app.post("/api/businesses", function(req, res) {
+    db.business.create(req.body)
+    .then(function (dbBusiness) {
+      res.json(dbBusiness);
+    });
+  });
+
+  // Get one user by id
+  app.get("/api/user/:id", function(req, res) {
+    db.user.findOne({
       where: {
         id: req.params.id
       }
-    }).then( (result) => res.json(result) )
-  );
-}
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+ 
+  // Create a new user
+  app.post("/api/users", function(req, res) {
+    db.user.create(req.body)
+    .then(function (dbUser) {
+      res.json(dbUser);
+    });
+  });
+
+  
+  app.get("/api/users", function(req, res) {
+    const email = req.query.username;
+    const password = req.query.password;
+  
+    db.user.findAll({
+      where: {
+        email: req.params.email,
+        password: req.params.password
+      }
+    }).then(function(dbUser) {
+      // res.json(dbUser);
+      if (dbUser != null) {
+        res.redirect("/users");
+      } else {
+        // you'd maybe like to set response status to 404
+        // also some user friendly error message could be good as response body
+        console.log("Error: user not found");
+      }
+    });
+  });
+
+  // Delete a business by id
+  app.delete("/api/business/:id", function(req, res) {
+    db.business.destroy({ 
+      where: { 
+        id: req.params.id 
+      } 
+    })
+    .then(function (dbBusiness) {
+      res.json(dbBusiness);
+    });
+  });
+
+};
 
 console.log("Hi there!");

@@ -6,8 +6,10 @@ var Sequelize = require("sequelize");
 var basename = path.basename(module.filename);
 var env = process.env.NODE_ENV || "development";
 var config = require(path.join(__dirname, "..", "config", "config.json"))[env];
-var sequelize = new Sequelize(process.env[config.use_env_variable]);
 var db = {};
+
+var sequelize = new Sequelize(process.env[config.use_env_variable]);
+
 
 fs.readdirSync(__dirname)
   .filter(function(file) {
@@ -16,12 +18,12 @@ fs.readdirSync(__dirname)
     );
   })
   .forEach(function(file) {
-    var model = sequelize.import(path.join(__dirname, file));
+    var model = sequelize["import"](path.join(__dirname, file));
     db[model.name] = model;
   });
 
 Object.keys(db).forEach(function(modelName) {
-  if ("associate" in db[modelName]) {
+  if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });

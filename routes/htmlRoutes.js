@@ -52,15 +52,23 @@ module.exports = function(app) {
 
   //Load ABOUT US
   app.get("/aboutus", function (req, res) {
-    db.business.findAll({}).then(function (smbusinessdb) {
+    db.business.findAll({}).then(function () {
       res.render("aboutus", {
+      });
+    });
+  });
+
+  //Load dash board page
+  app.get("/dashboard", function (req, res) {
+    db.business.findAll({}).then(function () {
+      res.render("dashboard", {
       });
     });
   });
     
   // Load example page and pass in an example by id
   app.get("/business/:id", function(req, res) {
-    db.Business.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
+    db.business.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
       res.render("business", {
         example: smbusinessdb
       });

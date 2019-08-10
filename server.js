@@ -6,6 +6,14 @@ var session = require("express-session");
 var bodyParser = require("body-parser");
 var models = require("./models");
 
+// Database
+var db = require("./config/connection.js");
+
+// Test DB
+db.authenticate()
+    .then(() => console.log("Database connected..."))
+    .catch(err => console.log("Error" + err))
+
 var app = express();
 var PORT = process.env.PORT || 3000;
 

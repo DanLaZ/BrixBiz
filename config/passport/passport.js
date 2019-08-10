@@ -18,7 +18,7 @@ module.exports = function(passport, user) {
 // deserialize user 
 passport.deserializeUser(function(id, done) {
     console.log("USERSSSS", User.findOne({}))
-    User.findOne({
+    user.findOne({
         where: {
             id: id
         }
@@ -144,7 +144,7 @@ passport.use('local-signin', new LocalStrategy(
  
         }
  
-        User.findOne({
+        user.findOne({
             where: {
                 email: email
             }
