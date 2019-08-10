@@ -1,5 +1,6 @@
 var db = require("../models");
 
+
 module.exports = function (app) {
   //Load index page
   app.get("/", function (req, res) {
@@ -19,14 +20,7 @@ module.exports = function (app) {
       });
     });
   });
-  // Load example page and pass in an example by id
-  app.get("/business/:id", function (req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
-      res.render("business", {
-        example: smbusinessdb
-      });
-    });
-  });
+  
 
   app.get("/businesses", function (req, res) {
     res.render("businesses");
@@ -35,8 +29,31 @@ module.exports = function (app) {
   app.get("/courier", function (req, res) {
     res.render("courier");
   });
+  
+  app.get("/aboutus", function (req, res) {
+    res.render("aboutus");
+  });
+  
+  app.get("/index", function (req, res) {
+    res.render("index");
+  });
 
+  app.get("/index", function (req, res) {
+    res.render("index");
+  });
 
+  app.get("/addbus", function (req, res) {
+    res.render("addbus");
+  });
+
+  // Load example page and pass in an example by id
+  app.get("/business/:id", function (req, res) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function (smbusinessdb) {
+      res.render("business", {
+        example: smbusinessdb
+      });
+    });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
